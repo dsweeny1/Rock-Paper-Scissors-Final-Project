@@ -1,0 +1,30 @@
+* {
+ border: 1px solid green
+}
+
+* {
+  font-family: serif;
+}
+
+.section {
+  display: flex;
+}
+
+h1 {
+  margin-left: 40%;
+  width: 280px;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px;
+}
+
+.left, .right {
+  width: 25%;
+}
+
+.middle {
+  width: 50%;
+}
