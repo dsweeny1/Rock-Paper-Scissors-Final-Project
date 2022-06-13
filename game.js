@@ -1,49 +1,39 @@
 class Game {
-  constructor(type, winner) {
-    this.type = type;
+  constructor(gameType) {
+    this.type = gameType;
     this.characters = [];
-    this.human = new Player("Human");
-    this.computer = new Player("Computer");
-    this.humanChoice = humanChoice;
-    this.computerChoice = computerChoice;
-    this.winner = winner;
+    this.human = new Player("Human", gameType);
+    this.computer = new Player("Computer", gameType);
+    this.winner = '';
   }
-  chooseCharacters() {
+
+  showCharacters() {
     if (this.type === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
-    } else if (this.type === "Advanced") {
+    } else if (this.type === "Spicy") {
       this.characters = ["rock", "paper", "scissors", "mushroom", "flower"];
     }
   }
-  getComputerChoice() {
-    this.computerChoice = this.characters[Math.floor(Math.random() * this.characters.length)];
-  }
-  updatePlayerChoices() {
-    this.humanChoice = this.human.currentFighter;
 
-    determineWinner() {
-      if (this.humanChoice === this.computerChoice) {
-        this.winner = "tie";
-      } else if (
-        (this.humanChoice === "rock" && this.computerChoice === "scissors") ||
-        (this.humanChoice === "paper" && this.computerChoice === "rock") ||
-        (this.humanChoice === "scissors" &&
-          this.computerChoice === "paper") ||
-        (this.humanChoice === "rock" && this.computerChoice === "mushroom") ||
-        (this.humanChoice === "paper" && this.computerChoice === "flower") ||
-        (this.humanChoice === "scissors" &&
-          this.computerChoice === "mushroom") ||
-        (this.humanChoice === "mushroom" && this.computerChoice === "paper") ||
-        (this.humanChoice === "mushroom" &&
-          this.computerChoice === "flower") ||
-        (this.humanChoice === "flower" &&
-          this.computerChoice === "scissors") ||
-        (this.humanChoice === "flower" && this.computerChoice === "rock")
-      ) {
-        this.winner = "Human";
-      } else {
-        this.winner = "Computer";
-      }
-      viewChoices(this.humanChoice, this.computerChoice);
+  determineWinner() {
+    if (this.human.humanFighter === this.computer.computerFighter) {
+    this.winner = "tie";
+    } else if (
+    (this.human.humanFighter === "rock" && this.computer.computerFighter === "scissors") ||
+    (this.human.humanFighter === "paper" && this.computer.computerFighter === "rock") ||
+    (this.human.humanFighter === "scissors" &&
+    this.computer.computerFighter === "paper") ||
+    (this.human.humanFighter === "rock" && this.computer.computerFighter === "mushroom") ||
+    (this.human.humanFighter === "paper" && this.computer.computerFighter === "flower") ||
+    (this.human.humanFighter === "scissors" && this.computer.computerFighter === "mushroom") ||
+    (this.human.humanFighter === "mushroom" && this.computer.computerFighter === "paper") ||
+    (this.human.humanFighter === "mushroom" && this.computer.computerFighter === "flower") ||
+    (this.human.humanFighter === "flower" && this.computer.computerFighter === "scissors") ||
+    (this.human.humanFighter === "flower" && this.computer.computerFighter === "rock")
+    ) {
+    this.winner = "Human";
+    } else {
+    this.winner = "Computer";
     }
+  }
 }
