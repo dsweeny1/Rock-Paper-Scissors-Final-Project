@@ -60,7 +60,7 @@ function selectGame(event) {
 
 function playGame(event) {
   // I think this is where a new instance of Game goes?
-  game = new Game()
+  // game = new Game()
   // var id = event.target.id
   // console.log(game.humanFighter);
   game.human.selectHumanFighter()
@@ -70,8 +70,11 @@ function playGame(event) {
 }
 
 function playClassicGame(event) {
+  console.log(event);
+  game = new Game()
+  game.gameType = 'Classic';
   playGame(event)
-  game.type = 'Classic';
+  console.log(game);
   hideElement(displayResults);
   hideElement(result);
   viewElement(chooseFighter);
@@ -83,8 +86,9 @@ function playClassicGame(event) {
 }
 
 function playSpicyGame(event) {
+  game = new Game()
+  game.gameType = 'Spicy';
   playGame(event)
-  game.type = 'Spicy';
   hideElement(displayResults);
   hideElement(result);
   viewElement(chooseFighter);
@@ -108,16 +112,6 @@ function viewPlayerChoice(humanFighter, computerFighter) {
     displayResults.innerHTML =
     `<img class="player-image" src="./assests/computer_icon.png" width="125" height="125"/>`
   }
-  // displayWinner.innerHTML = "";
-  // displayWinner.innerHTML += `
-  // <section class="pick humanFighter" id="humanFighter">
-  //     <img id=${humanFighter} src='./assests/${humanFighter}.png'>
-  //   </section>
-  //   <section class="pick computerFighter" id="computerFighter">
-  //     <img id=${computerFighter} src='./assests/${computerFighter}.png'>
-  //   </section>
-  // `;
-
   // what I want to do here is show either the person image or the computer image, whomever wins + HUMANS WINS!!! or COMPUTER WINS!!!
   viewElement(result)
   displayWinner()
@@ -143,10 +137,10 @@ function displayWinner() {
 }
 
 function returnToGame() {
-  if (game.type === 'Classic') {
-    setTimeout(playClassicGame, 10000);
+  if (game.gameType === 'Classic') {
+    setTimeout(playClassicGame, 2000);
   } else {
-    setTimeout(playSpicyGame, 10000);
+    setTimeout(playSpicyGame, 2000);
   }
 }
 
