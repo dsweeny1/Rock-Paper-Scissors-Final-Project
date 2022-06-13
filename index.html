@@ -4,12 +4,67 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assests/player_image.png">
   </head>
-  <body
-    <section>
-      <h1> Rock Paper Scissors </h1>
-    </section>
-    <column> User 1
-      </column>
+  <body>
+    <aside class="aside">
+      <section class="left-aside">
+        <img class="player-image" src="./assests/player_image.png" width="125" height="125"/>
+        <h3 id="humanFighter">Human</h3>
+        <p class="human-wins wins-calculator">wins: 0</p>
+      </section>
+      <div class="change-game-button hidden">
+        <button class="change-game-button">Change Game</button>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <h1>Rock, Paper, Scissors</h1>
+        <h2 class="choose-game">Choose Your Game!</h2>
+        <h2 class="choose-fighter hidden">Choose Your Fighter!</h2>
+        <h2 class="result hidden" id="result">Result Here</h2>
+      </header>
+      <section class="rules-section">
+        <section class="buttons">
+          <button class="rules-buttons classic-rules"  id="charactersClassic">
+            <h4>Classic Rules</h4>
+            <p>Rock beats Scissors</p>
+            <p>Paper beats Rock</p>
+            <p>Scissors beat Paper</p>
+          </button>
+          <button class="rules-buttons spicy-rules" id="charactersSpicy">
+            <h4>Spicy Rules</h4>
+            <p>Rock beats Scissors & Mushroom</p>
+            <p>Paper beats Rock & Flower</p>
+            <p>Scissors beats Paper & Mushroom</p>
+            <p>Mushroom beats Paper & Flower</p>
+            <p>Flower beats Scissors & Rock</p>
+          </button>
+        </section>
+      </section>
+      <div class="display-results "></div>
+      <section class="characters-classic hidden">
+        <img class="classic-characters-image icon" id="rock" data="classic spicy" src="./assests/rock_icon.png" width="150" height="150"/>
+        <img class="classic-characters-image icon" id="paper" data="classic spicy" src="./assests/paper_icon.png" width="150" height="150"/>
+        <img class="classic-characters-image icon" id="scissors" data="classic spicy" src="./assests/scissors_icon.png" width="150" height="150"/>
+      </section>
+
+      <section class="characters-spicy hidden">
+        <img class="spicy-characters-image icon" id="flower" data="spicy" src="./assests/flower_icon.png" width="150" height="150"/>
+        <img class="classic-characters-image icon" id="mushroom" data="spicy" src="./assests/mushroom_icon.png" width="150" height="150"/>
+      </section>
+    </main>
+
+    <aside class="aside">
+      <section class="right-aside">
+        <img class="player-image" src="./assests/computer_icon.png" width="125" height="125"/>
+        <h3 id="computerFighter">Computer</h3>
+        <p class="computer-wins wins-calculator">wins: 0</p>
+      </section>
+    </aside>
   </body>
+  <script type="text/javascript" src="Player.js"></script>
+  <script type="text/javascript" src="Game.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</html>

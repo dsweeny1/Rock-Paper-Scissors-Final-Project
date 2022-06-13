@@ -1,30 +1,77 @@
 * {
- border: 1px solid green
+ border: 2px solid red;
 }
 
 * {
   font-family: serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./assests/petra_background.png);
+  background-size: auto;
+  height: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*
+h1 {
+  width:  210px;;
 }
 
 .section {
   display: flex;
 }
 
-h1 {
-  margin-left: 40%;
-  width: 280px;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.column {
+/* .column {
   float: left;
   padding: 10px;
   height: 300px;
+} */
+
+/* .column-left, .column-right {
+  display: flex;
+  width: 23%;
+  margin-bottom: 62%;
+  flex-direction: column;
+  align-items: center;
 }
 
-.left, .right {
-  width: 25%;
-}
-
-.middle {
+.column-middle {
+  display: flex;
   width: 50%;
+  margin-bottom: 62%;
+  justify-content: center;
 }
+
+.classic, .spicy {
+  display: flex;
+  margin-top: 10%;
+  font-size: 20px;
+  flex-direction: column;
+  align-items: center;
+} */
