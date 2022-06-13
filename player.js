@@ -8,7 +8,6 @@ class Player {
     this.humanFighter = '';
     this.computerFighter = this.updateComputerChoices();
   }
-
    selectHumanFighter(id) {
     if (id === 'rock') {
       this.humanFighter = 'rock';
@@ -22,12 +21,10 @@ class Player {
       this.humanFighter = 'mushroom';
     }
   }
-
     selectComputerFighter() {
-    var computerFighter = this.characters.length[Math.floor(Math.random() * this.characters.length)];
+    var computerFighter = this.characters[Math.floor(Math.random() * this.characters.length)];
     return computerFighter
   }
-
     updateComputerChoices() {
     if (this.gameType === 'Classic') {
     return this.selectComputerFighter(this.characters)
