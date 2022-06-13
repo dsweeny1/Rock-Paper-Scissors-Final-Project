@@ -1,6 +1,6 @@
 class Game {
   constructor(gameType) {
-    this.type = gameType;
+    this.gameType = gameType;
     this.characters = [];
     this.human = new Player("Human", gameType);
     this.computer = new Player("Computer", gameType);
@@ -8,9 +8,9 @@ class Game {
   }
 
   showCharacters() {
-    if (this.type === "Classic") {
+    if (this.gameType === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
-    } else if (this.type === "Spicy") {
+    } else if (this.gameType === "Spicy") {
       this.characters = ["rock", "paper", "scissors", "mushroom", "flower"];
     }
   }
