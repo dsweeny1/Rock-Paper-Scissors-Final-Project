@@ -30,6 +30,12 @@ Technology this project features:
 3. The **main.js** file provides the functionality for the page in connection to the DOM
 4. The **styles.css** file houses the style choices for the application
 
+## Illustrations
+
+![Screen Shot 2022-06-14 at 2 05 24 PM](https://user-images.githubusercontent.com/11345457/173682674-3febda5a-7ece-4497-9de5-05dc8a05db4b.png)
+![Screen Shot 2022-06-14 at 2 05 10 PM](https://user-images.githubusercontent.com/11345457/173682688-03e021ba-27e1-414a-b4e8-8665f5a04db7.png)
+![Screen Shot 2022-06-14 at 2 04 56 PM](https://user-images.githubusercontent.com/11345457/173682700-fbf56ff0-aca5-4ad9-b26d-822c6615d5fc.png)
+
 
 ## Possible Future Additions
 
