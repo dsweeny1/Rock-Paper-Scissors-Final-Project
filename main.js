@@ -1,5 +1,5 @@
 // Global Variables
-var game;
+var game = new Game()
 
 // QuerySelectors
 var rulesSection = document.querySelector('.rules-section')
@@ -27,13 +27,17 @@ var mushroom = document.getElementById('mushroom')
 classicRulesButton.addEventListener("click", playClassicGame);
 spicyRulesButton.addEventListener("click", playSpicyGame);
 changeGameButton.addEventListener("click", returnHome);
-classicCharacters.addEventListener("click", playGame);
-spicyCharacters.addEventListener("click", playGame);
-rock.addEventListener('click', viewPlayerChoice)
-paper.addEventListener('click', viewPlayerChoice)
-scissors.addEventListener('click', viewPlayerChoice)
-flower.addEventListener('click', viewPlayerChoice)
-mushroom.addEventListener('click', viewPlayerChoice)
+classicCharacters.addEventListener("click", function(event){
+  playGame(event.target.id)
+});
+spicyCharacters.addEventListener("click", function(event){
+  playGame(event.target.id)
+});
+// rock.addEventListener('click', viewPlayerChoice)
+// paper.addEventListener('click', viewPlayerChoice)
+// scissors.addEventListener('click', viewPlayerChoice)
+// flower.addEventListener('click', viewPlayerChoice)
+// mushroom.addEventListener('click', viewPlayerChoice)
 
 //Functions
 
@@ -44,7 +48,6 @@ mushroom.addEventListener('click', viewPlayerChoice)
 // Once a fighter is chosen, code will run to determine a winner at random; the winning fighter will display; and whoever won will be awarded 1 point.
 // At that point the page will default back to the current game selected, either classic or spicy and the User can continue to play that game or click the Change Game Button and select the other game.
 
-// If Classic Game is selected show classicCharacters
 function selectGame(event) {
   if (event.target.id === charactersClassic) {
     viewElement(classicCharacters)
@@ -58,20 +61,15 @@ function selectGame(event) {
   viewElement(changeGameButton)
 }
 
-function playGame(event) {
-  // I think this is where a new instance of Game goes?
-  game = new Game()
-  // var id = event.target.id
-  // console.log(game.humanFighter);
-  game.human.selectHumanFighter()
-  // had id in parends, once I took it out my setTimeout function started working. Still no image upon completion of game
+function playGame(fighter) {
+  game.human.selectHumanFighter(fighter)
   game.computer.selectComputerFighter()
   game.determineWinner();
+  viewPlayerChoice()
 }
 
-function playClassicGame(event) {
-  playGame(event)
-  game.type = 'Classic';
+function playClassicGame() {
+  game.gameType = 'Classic';
   hideElement(displayResults);
   hideElement(result);
   viewElement(chooseFighter);
@@ -82,9 +80,9 @@ function playClassicGame(event) {
   game.showCharacters();
 }
 
-function playSpicyGame(event) {
-  playGame(event)
-  game.type = 'Spicy';
+function playSpicyGame() {
+  game.gameType = 'Spicy';
+  // playGame()
   hideElement(displayResults);
   hideElement(result);
   viewElement(chooseFighter);
@@ -96,7 +94,7 @@ function playSpicyGame(event) {
   game.showCharacters();
 }
 
-function viewPlayerChoice(humanFighter, computerFighter) {
+function viewPlayerChoice() {
   hideElement(chooseFighter);
   viewElement(displayResults);
   hideElement(classicCharacters);
@@ -104,54 +102,44 @@ function viewPlayerChoice(humanFighter, computerFighter) {
   if (game.winner === 'Human') {
     displayResults.innerHTML =
     `<img class="player-image" src="./assests/player_image.png" width="125" height="125"/>`
-  } else {
+  } else if (game.winner === 'Computer'){
     displayResults.innerHTML =
     `<img class="player-image" src="./assests/computer_icon.png" width="125" height="125"/>`
+  } else {
+    displayResults.innerHTML = `<img class="tie-game" src="./assests/tie_icon.png" width="125" height="125"/>`
   }
-  // displayWinner.innerHTML = "";
-  // displayWinner.innerHTML += `
-  // <section class="pick humanFighter" id="humanFighter">
-  //     <img id=${humanFighter} src='./assests/${humanFighter}.png'>
-  //   </section>
-  //   <section class="pick computerFighter" id="computerFighter">
-  //     <img id=${computerFighter} src='./assests/${computerFighter}.png'>
-  //   </section>
-  // `;
-
-  // what I want to do here is show either the person image or the computer image, whomever wins + HUMANS WINS!!! or COMPUTER WINS!!!
   viewElement(result)
   displayWinner()
-  returnToGame()
 }
 
 function displayWinner() {
   if (game.winner === 'Human') {
-    game.human.wins += 1;
     result.innerText = 'HUMAN WINS!!!';
-    humanWins.innerHTML = 'wins: ' + game.human.wins;
   } else if (game.winner === 'Computer') {
-    game.computer.wins +=1 ;
     result.innerText = 'COMPUTER WINS!!!';
   } else {
-    game.winner = 'tie';
     result.innerText = 'TIE GAME!';
   }
+  humanWins.innerText = 'wins: ' + game.human.wins;
+  computerWins.innerText = 'wins: ' + game.computer.wins;
+  console.log(game.human.wins, 'human');
+  console.log(game.computer.wins, 'computer');
   hideElement(classicCharacters);
   hideElement(spicyCharacters);
-  // viewElement(displayResults);
+    console.log(game.winner);
   returnToGame()
 }
 
 function returnToGame() {
-  if (game.type === 'Classic') {
-    setTimeout(playClassicGame, 10000);
+  if (game.gameType === 'Classic') {
+    setTimeout(playClassicGame, 2000);
   } else {
-    setTimeout(playSpicyGame, 10000);
+    setTimeout(playSpicyGame, 2000);
   }
 }
 
 function returnHome() {
-  event.preventDefault;
+  event.preventDefault();
   hideElement(changeGameButton);
   hideElement(classicCharacters);
   hideElement(spicyCharacters);

@@ -1,6 +1,6 @@
 class Game {
   constructor(gameType) {
-    this.type = gameType;
+    this.gameType = gameType;
     this.characters = [];
     this.human = new Player("Human", gameType);
     this.computer = new Player("Computer", gameType);
@@ -8,9 +8,9 @@ class Game {
   }
 
   showCharacters() {
-    if (this.type === "Classic") {
+    if (this.gameType === "Classic") {
       this.characters = ["rock", "paper", "scissors"];
-    } else if (this.type === "Spicy") {
+    } else if (this.gameType === "Spicy") {
       this.characters = ["rock", "paper", "scissors", "mushroom", "flower"];
     }
   }
@@ -18,7 +18,7 @@ class Game {
   determineWinner() {
     if (this.human.humanFighter === this.computer.computerFighter) {
     this.winner = "tie";
-    } else if (
+  } else if (
     (this.human.humanFighter === "rock" && this.computer.computerFighter === "scissors") ||
     (this.human.humanFighter === "paper" && this.computer.computerFighter === "rock") ||
     (this.human.humanFighter === "scissors" &&
@@ -31,9 +31,11 @@ class Game {
     (this.human.humanFighter === "flower" && this.computer.computerFighter === "scissors") ||
     (this.human.humanFighter === "flower" && this.computer.computerFighter === "rock")
     ) {
-    this.winner = "Human";
+    this.winner = 'Human';
+    this.human.wins++
     } else {
-    this.winner = "Computer";
+    this.winner = 'Computer';
+    this.computer.wins++
     }
   }
 }
