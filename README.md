@@ -1,7 +1,7 @@
-#Rock-Paper-Scissors-Final-Project
+# Rock-Paper-Scissors-Final-Project
 Mod 1 Final Project
 
-##Local Set-Up Instructions
+## Local Set-Up Instructions
 
 From the repo click the code button and copy the SSH link.
 Open terminal by pressing command + space bar, and search for terminal
@@ -10,19 +10,19 @@ In your terminal type cd rock-paper-scissors
 Then type open index.html
 The browser should then deploy
 
-##Overview and Project Goals
+## Overview and Project Goals
 
 The goal of the final solo project of Mod 1 is to build a Rock, Paper, Scissors game from scratch using HTML, CSS and Vanilla JavaScript.
 
-###What are the Learning Goals of the project?
+### What are the Learning Goals of the project?
 
-####To solidify and demonstrate the understanding of:
+#### To solidify and demonstrate the understanding of:
 
 1. Writing clean and DRY HTML, CSS, and JavaScript
 2. The difference between the data model and how the data is displayed on the DOM
 3. The interaction between multiple class files
 
-##Code Architecture
+## Code Architecture
 Technology this project features:
 
 1. The **index.html** file defines the structure of the content of the page.
@@ -31,18 +31,18 @@ Technology this project features:
 4. The **styles.css** file houses the style choices for the application
 
 
-##Possible Future Additions
+## Possible Future Additions
 
 1. *New Game* functionality to reset the wins and start a new game
 2. Additional functionality to allow for two human users to play against each other
 3. A local storage feature could be implemented to save scores after page load
 
-##Project Management
+## Project Management
 
 I used:
 1. [Github Projects](https://github.com/users/dsweeny1/projects/1/views/1) to help plan out my methods
 2. [Exalidraw](https://excalidraw.com/) to help get an idea of what I wanted my application to look like
 
-##Contributor
+## Contributor
 
 [Danielle Sweeny](https://github.com/dsweeny1)
