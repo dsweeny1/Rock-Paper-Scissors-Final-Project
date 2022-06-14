@@ -1,77 +1,70 @@
 * {
- border: 2px solid red;
-}
-
-* {
   font-family: serif;
-  color: white;
+  color: #8b0000;
+  /*  #8b0000 darkred */
 }
 
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   background-image: url(./assests/petra_background.png);
-  background-size: auto;
   height: 100%;
   min-height: 100vh;
   background-size: cover;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
 }
+
+h1 {
+  font-size: 75px;
+}
+
+h2 {
+  /* margin-left: 29%; */
+  text-align: center;
+}
+
+.aside {
+  font-size: 22px;
+}
+
+.left-aside {
+  display: flex;
+  margin-left: 20%;
+  margin-top: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-aside {
+  display: flex;
+  margin-right: 20%;
+  margin-top: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+.classic-rules, .spicy-rules {
+  height: 450px;
+  width: 250px;
+  font-size: 20px;
+
+}
+
 
 .hidden {
   display: none;
 }
-
-
-/*
-h1 {
-  width:  210px;;
-}
-
-.section {
-  display: flex;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  align-content: stretch;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-/* .column {
-  float: left;
-  padding: 10px;
-  height: 300px;
-} */
-
-/* .column-left, .column-right {
-  display: flex;
-  width: 23%;
-  margin-bottom: 62%;
-  flex-direction: column;
-  align-items: center;
-}
-
-.column-middle {
-  display: flex;
-  width: 50%;
-  margin-bottom: 62%;
-  justify-content: center;
-}
-
-.classic, .spicy {
-  display: flex;
-  margin-top: 10%;
-  font-size: 20px;
-  flex-direction: column;
-  align-items: center;
-} */
